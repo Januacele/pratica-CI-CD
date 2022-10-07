@@ -1,13 +1,12 @@
 FROM node
 
-WORKDIR /app
+WORKDIR /usr/src/
 
 COPY . .
 
-RUN npm install
-
-RUN npx prisma generate
-
+RUN npm i
 RUN npm run build
 
-CMD [ "npm, start" ]
+EXPOSE 5000
+
+CMD [ "npm", "start" ]
